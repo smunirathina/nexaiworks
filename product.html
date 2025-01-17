@@ -33,6 +33,16 @@
 </head>
 
 <body>
+    <script>
+        function toggleDetails() {
+            var details = document.getElementById("waferDetails");
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -144,6 +154,15 @@
                             </h5>
                             <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
                         </a>
+                        <div id="waferDetails" style="display: none; background: #fff; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                            <p><strong>Advanced Features:</strong></p>
+                            <ul>
+                                <li>Utilizes **LangChain framework** for deep AI processing.</li>
+                                <li>Detects and categorizes wafer defects using machine learning.</li>
+                                <li>Provides real-time insights for semiconductor manufacturing.</li>
+                                <li>Integrates with existing QA and manufacturing workflows.</li>
+                            </ul>
+                       </div>
                     </div>
                 </div>
             </div>
