@@ -35,11 +35,15 @@
 <body>
     <script>
         function toggleDetails() {
+            var shortDesc = document.getElementById("waferShortDesc");
             var details = document.getElementById("waferDetails");
+        
             if (details.style.display === "none" || details.style.display === "") {
-                details.style.display = "block";
+                details.style.display = "block";  // Show details
+                shortDesc.style.display = "none"; // Hide initial text
             } else {
-                details.style.display = "none";
+                details.style.display = "none";   // Hide details
+                shortDesc.style.display = "block"; // Show initial text
             }
         }
     </script>
@@ -144,28 +148,27 @@
                 <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Case Study</div>
                 <h1 class="mb-4">Our AI Products</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="case-item position-relative overflow-hidden rounded mb-2">
-                        
-                        <img class="img-fluid" src="img/WaferChatGPT.jpg" alt="">
-                        <a class="case-overlay text-decoration-none" href="javascript:void(0);" onclick="toggleDetails()">
-                            <small>Wafer Defect Detector</small>
-                            <h5 class="lh-base text-white mb-3">WaferGPT is a multimodal AI-powered tool designed to analyze semiconductor wafer images and provide actionable insights. It leverages the LangChain framework and is built with multiple intelligent agents to handle complex queries.
-                            </h5>
-                            <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
-                        </a>
-                        <div id="waferDetails" style="display: none; background: #fff; padding: 15px; border-radius: 5px; margin-top: 10px;">
-                            <p><strong>Advanced Features:</strong></p>
-                            <ul>
-                                <li>Utilizes **LangChain framework** for deep AI processing.</li>
-                                <li>Detects and categorizes wafer defects using machine learning.</li>
-                                <li>Provides real-time insights for semiconductor manufacturing.</li>
-                                <li>Integrates with existing QA and manufacturing workflows.</li>
-                            </ul>
-                       </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="case-item position-relative overflow-hidden rounded mb-2">
+                    <img class="img-fluid" src="img/WaferChatGPT.jpg" alt="">
+                    <a class="case-overlay text-decoration-none" href="javascript:void(0);" onclick="toggleDetails()">
+                        <small>Wafer Defect Detector</small>
+                        <h5 id="waferShortDesc" class="lh-base text-white mb-3">
+                            WaferGPT is a multimodal AI-powered tool designed to analyze semiconductor wafer images and provide actionable insights.
+                        </h5>
+                        <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                    </a>
+                    <div id="waferDetails" style="display: none; background: #fff; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                        <p><strong>Advanced Features:</strong></p>
+                        <ul>
+                            <li>Utilizes <b>LangChain framework</b> for deep AI processing.</li>
+                            <li>Detects and categorizes wafer defects using machine learning.</li>
+                            <li>Provides real-time insights for semiconductor manufacturing.</li>
+                            <li>Integrates with existing QA and manufacturing workflows.</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
